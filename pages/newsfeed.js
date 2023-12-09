@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from '../styles/Home.module.css'
 import Article from './article';
 
@@ -16,15 +17,25 @@ const reactTutorialArticles = [
 
 
   export default function Newsfeed() {
-    const articlesArray = reactTutorialArticles.map((article, idx) => {
-        return <Article title={article.title} body={article.body} key={idx} />
-    });
-
+    const articlesArray = reactTutorialArticles.map((article, idx) => (
+      <Article
+        key={idx}
+        title={article.title}
+        body={article.body}
+        timestamp={new Date().toLocaleString()} // Add a timestamp for each article
+        author="John Doe" // Add an author for each article
+        likes={Math.floor(Math.random() * 100)} // Simulate random likes
+        comments={Math.floor(Math.random() * 50)} // Simulate random comments
+        shares={Math.floor(Math.random() * 20)} // Simulate random shares
+        // You can add more properties as needed
+        imageUrl={`https://placekitten.com/200/300?random=${idx}`} // Example: Simulated image URL
+        videoUrl="https://www.example.com/sample.mp4" // Example: Simulated video URL
+      />
+    ));
+  
     return (
-        <div className={styles.container}>
-            <div className={styles.grid}>
-            {articlesArray}
-            </div>
-        </div>
-    )
-}
+      <div className={styles.container}>
+        <div className={styles.grid}>{articlesArray}</div>
+      </div>
+    );
+  }

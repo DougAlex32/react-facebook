@@ -1,0 +1,36 @@
+/* Tweets.module.css */
+
+.tweet {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    background-color: white;
+    font-family: sans-serif;
+  }
+  
+  .tweetContent {
+    flex: 1;
+    margin-left: 12px;
+  }
+  
+  .tweetHeader {
+    display: flex;
+    align-items: center;
+  }
+  
+  .tweetHeader h3 {
+    margin: 0;
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  .tweetText {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  

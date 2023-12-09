@@ -1,4 +1,4 @@
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Tweets.module.css'
 
 export default function Tweet({ username, tweet }, idx) {
     return (

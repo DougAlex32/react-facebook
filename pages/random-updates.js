@@ -1,4 +1,4 @@
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Tweets.module.css'
 import Tweet from './tweet';
 
 const reactHacksTweets = [
@@ -30,7 +30,7 @@ export default function RandomUpdates() {
     });
 
     return (
-        <div className={styles.container}>
+        <div className={styles.tweetContainer}>
             <div className={styles.grid}>
             {tweetsArray}
             </div>

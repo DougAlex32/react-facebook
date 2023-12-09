@@ -1,16 +1,25 @@
 import { React} from "react";
 import styles from '../../../styles/Sidebar.module.css';
 import Image from 'next/image';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Search() {
     return (
-      <div className={styles.title}>
-        <h2>Gaming</h2>
+      <div>
+        <span className={styles.title}>Gaming</span>
+        <Image src='/settings-icon.jpeg' className={styles.settings_icon} alt='settings' width='20' height='20'/>
+
         <div className={styles.Sidebar_right}></div>
-        <Image src='/settings-icon.jpeg' alt='settings' width='20' height='20'/>
-        <input placeholder="Search gaming"/>
+        <div className={styles.search_input}>
+                    <SearchIcon />
+                    <input type="text" placeholder="Search Gaming" className={styles.search_input} />
+                </div>     
+        <div className={styles.sidebarLink}>
         <p>Play games</p>
+        </div>
+        <div className={styles.sidebarLink}>
         <p>Notifications</p>
+        </div>
       </div>
     )
   }
