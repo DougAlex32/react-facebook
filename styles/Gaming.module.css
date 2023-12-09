@@ -1,0 +1,132 @@
+/* Parent element for each row */
+.gameRow {
+  width: calc(95vw - 300px);
+  }
+
+/* Row title text */
+.gametitle {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+  width: 100%;
+}
+  
+/* Grid of game cards.  Parent element to all cards */
+.gameGrid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin: 0;
+  padding: 0;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 10px;
+}
+
+/* Parent container for all individual card elements */
+.gameCard {
+  position: relative;
+  height: 100%;
+  max-width:210px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  transition: filter 0.2s ease;
+  aspect-ratio: 1 / 1;
+  margin-right: 5px;
+}
+
+/* Slightly darkens card on mouse-over */
+.gameCard:hover {
+  filter: brightness(95%);
+}
+  
+/* Adjusts card width based on screen width during resizing of view window */
+  @media (max-width: 1500px) {
+    .gameCard {
+      flex-basis: calc(20% - 7px);
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .gameCard {
+      flex-basis: calc(25% - 7px);
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .gameCard {
+      flex-basis: calc(33.33% - 7px);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .gameCard {
+      flex-basis: calc(50% - 7px);
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .gameCard {
+      flex-basis: calc(100% - 7px);
+    }
+  }
+  
+/* Background image that's blured (appears below game image) */
+  .gameCardBackground {
+    width: 100%;
+    height: 170px;
+    background-size: cover;
+    filter: blur(25px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: filter 0.2s ease;
+  }
+  
+  /* Game title image */
+  .gameImage {
+    height: 55%;
+    width: auto;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  /* Bottom region of game card.  Contains name and player count */
+  .gameCardBottom {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 1;
+  }
+  
+  /* Game name text */
+  .gameCardBottom h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Player count text */
+  .playerCount {
+    background-color: rgb(54, 53, 53);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    width: fit-content;
+    border-radius: 25px;
+    margin: 5px;
+    margin-left: 0;
+  }

@@ -1,64 +1,53 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Link from 'next/link';
-import Image from 'next/image';
+import Newsfeed from './newsfeed';
+import RandomUpdates from './random-updates';
+import Gaming from './gaming/index';
 import Nav from './nav'
+import Sidebar from './gaming/sidebar';
 
+  export default function Home() {
+  const [activeMenuItem, setActiveMenuItem] = useState('Newsfeed');
 
-export default function Home() {
+  const handleMenuItemClick = (menuItem) => {
+    setActiveMenuItem(menuItem);
+  };
+
   return (
-
     <div className={styles.container}>
       <Head>
-        <title>Doug's Engineering Blog!</title>
+        <title>Fakebook</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.navBarContainer}>
-        <Nav />
+        <Nav onMenuItemClick={handleMenuItemClick} />
       </div>
-      <main>
-        
-        <h1 className={styles.title}>
-          Facebook  
-        </h1>
-        <Image src='/engine.jpg' alt='engine' width='200' height='200' />
-
-        <p className={styles.description}>
-          Get started by reading the blog 
-        </p>
-
-        <div className={styles.grid}>
-          <Link href="/posts/first-post" className={styles.card}>
-            <h3>First Blog &rarr;</h3>
-            <p>Learn about my engineering journey.</p>
-            </Link>
-          
-
-          <Link href="/posts/second-post" className={styles.card}>
-            <h3>Second Blog &rarr;</h3>
-            <p>Learn about React</p>
-          </Link>
-
-          <a
-            href="/posts/third-post"
-            className={styles.card}
-          >
-            <h3>Third Blog &rarr;</h3>
-            <p>Discover all the cool things about MongoDB.</p>
-          </a>
-
-          <a
-            href="/posts/fourth-post"
-            className={styles.card}
-          >
-            <h3>Fourth Blog &rarr;</h3>
-            <p>
-              My new job pays crazy good.
-            </p>
-          </a>
+      <div className={styles.contentContainer}>
+        <div className={styles.sidebar}>
+          <Sidebar />
         </div>
-      </main>
-
+        <main className={styles.main}>
+          {activeMenuItem === 'Newsfeed' && (
+            <>
+              <h1 className={styles.title}>Newsfeed</h1>
+              <Newsfeed />
+            </>
+          )}
+          {activeMenuItem === 'RandomUpdates' && (
+            <>
+              <h1>Random Updates</h1>
+              <RandomUpdates />
+            </>
+          )}
+          {activeMenuItem === 'Gaming' && (
+            <>
+              <Gaming />
+            </>
+          )}
+        </main>
+      </div>
+      
       <footer>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -69,73 +58,6 @@ export default function Home() {
           <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
         </a>
       </footer>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family:
-            Menlo,
-            Monaco,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            Segoe UI,
-            Roboto,
-            Oxygen,
-            Ubuntu,
-            Cantarell,
-            Fira Sans,
-            Droid Sans,
-            Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
     </div>
   );
 }

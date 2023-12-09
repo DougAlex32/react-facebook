@@ -1,11 +1,10 @@
 .navBar{
     display: flex;
-    padding: 15px 20px;
+    height: 50px;
     justify-content: space-between;
     width: 100%;
     position: sticky;
     background-color: white;
-    z-index: 100;
     top: 0;
     box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 75);
 }
@@ -19,8 +18,8 @@
     display: flex;
     align-items: center;
     background-color: #eff2f5;
-    padding: 10px;
-    margin-left: 10px;
+    padding-top: 0px;
+    margin:7px 7px;
     border-radius: 999px;
 }
 
@@ -33,18 +32,31 @@ height: 40px;
     border: none;
     background-color: transparent;
     outline-width: 0;
+    padding: 5px;
 }
 
 .navBar_center{
     display: flex;
     flex: 1;
     justify-content: center;
+    height: 47px;
+    margin-top: 0;
+    padding: 0;
 }
 
-.navBar_center_item{
-    color: grey;
+.navBar_center_item {
+    color: rgb(168, 166, 166);
+    height: 100%;
 }
 .navBar_center_item:hover{
+    color: #2e81f4;
+}
+
+.navBar_center_item_active{
+    border-bottom: 4px solid #2e81f4;
+    color: #2e81f4;
+}
+.navBar_center_item_active > .MuiSvgIcon-root{
     color: #2e81f4;
 }
 
@@ -55,7 +67,7 @@ height: 40px;
     cursor: pointer;
 }
 
-.navBar_center_item:hover{
+.navBar_center_item:hover {
     background-color: #eff2f5;
     border-radius: 10px;
     align-items: center;
@@ -66,3 +78,14 @@ height: 40px;
 .navBar_right{
     display: flex;
 }
+
+.fblogo {
+    margin:0px;
+    margin-top: 5px;
+  }
+
+  .navBar_info{
+      display: flex;
+      align-items: center;
+      padding-right: 20px;
+  }

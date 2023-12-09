@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import Avartar from './avatar';
-import styles from '../../styles/FirstPost.module.css';
+import Avatar from '../avatar';
+
+// data
 const array = [
     'HTML',
     'CSS',
@@ -11,23 +12,22 @@ const array = [
     'Node'
 ]
 
-export default function FirstPost(){
-    const skillArray = array.map((s,idx) =>{ 
-        return   <div className={styles.card} key={idx}>{s}</div>
-       
+export default function FirstPost() {
+    const skillsArray = array.map((s, idx) => {
+        return <p key={idx}>{s}</p>
     })
 
-    return(
-        <div className={styles.container}>
+    return (
+        <div>
             <h1>First Post</h1>
-            <Avartar />
-            <p>My engineering journey began learning HTML, CSS, JAVA, and more</p>
-            <p> I learned {array[6]} for server-side rendering </p>
-            <div className={styles.grid}>
+            <Avatar />
+            <p>My engineering journey began with learning HTML, CSS, JavaScript, and more.</p>
+            <p>I learned {array[6]} for server-side rendering</p>
+            <div>
                 I have learned the following concepts:
-                {skillArray}
+                {skillsArray}
             </div>
-            <Link href="/">Go to Home</Link>
+            <Link href="/">Return Home</Link>
         </div>
     )
 }

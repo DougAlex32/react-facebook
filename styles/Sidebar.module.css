@@ -1,0 +1,17 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.Sidebar_right > img {
+    display: inline;
+}
+
+.title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
