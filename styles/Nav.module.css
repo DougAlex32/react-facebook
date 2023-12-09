@@ -1,0 +1,68 @@
+.navBar{
+    display: flex;
+    padding: 15px 20px;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+    background-color: white;
+    z-index: 100;
+    top: 0;
+    box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 75);
+}
+
+.navBar_left{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navBar_input{
+    display: flex;
+    align-items: center;
+    background-color: #eff2f5;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 999px;
+}
+
+.navBar_left >img {
+height: 40px;
+
+}
+
+.navBar_input >input{
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+}
+
+.navBar_center{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.navBar_center_item{
+    color: grey;
+}
+.navBar_center_item:hover{
+    color: #2e81f4;
+}
+
+.navBar_center_item{
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    cursor: pointer;
+}
+
+.navBar_center_item:hover{
+    background-color: #eff2f5;
+    border-radius: 10px;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: none;
+}
+
+.navBar_right{
+    display: flex;
+}

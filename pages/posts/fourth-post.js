@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import Avartar from './avatar';
-import styles from '../../styles/SecondPost.module.css';
+import styles from '../../styles/FourthPost.module.css';
 const reactArray = [
-    { topic: 'components', description: 'components are used to build React App'},
-    { topic: 'props', description: 'props are used to pass data down to other components'},
-    { topic: 'link tag', description: 'link tag is a next tag used to navigate React App'},
+    { topic: 'Bag', description: 'The amount of money you will get per project'},
+    { topic: 'Drip', description: 'The type of clothing or jewlery you will be rocking'},
+    { topic: 'Net worth', description: 'The amount of  Bag + Drip'},
 ]
 
-export default function SecondPost(){
+export default function FourthPost(){
     const reactArrayDisplay = reactArray.map((obj, idx)=>{
         return(
             <div className={styles.card} key={idx}>
@@ -18,9 +18,9 @@ export default function SecondPost(){
     })
     return(
         <div className={styles.container}>
-            <h1>Second Post</h1>
+            <h1>Fourth Post</h1>
             <Avartar />
-            <p>React is a front-end frame work that allows us to make component and more.</p>
+            <p>WE WILL BE BALLING</p>
         
          <div className={styles.grid}>
             {reactArrayDisplay}

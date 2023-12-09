@@ -2,31 +2,37 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import Nav from './nav'
 
-export default function Home() { // exporting the function Home
+
+export default function Home() {
   return (
+
     <div className={styles.container}>
       <Head>
-        <title>Rome's Engineering Blog</title>
+        <title>Doug's Engineering Blog!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <div className={styles.navBarContainer}>
+        <Nav />
+      </div>
       <main>
+        
         <h1 className={styles.title}>
-          Welcome to my blog!
+          Facebook  
         </h1>
-
-        <Image src='/engineer.png' alt='engineer' width='200' height='200'/>
+        <Image src='/engine.jpg' alt='engine' width='200' height='200' />
 
         <p className={styles.description}>
-          Get started by reading the blog.
+          Get started by reading the blog 
         </p>
 
         <div className={styles.grid}>
           <Link href="/posts/first-post" className={styles.card}>
             <h3>First Blog &rarr;</h3>
-            <p>Learn about my engineering journey</p>
-          </Link>
+            <p>Learn about my engineering journey.</p>
+            </Link>
+          
 
           <Link href="/posts/second-post" className={styles.card}>
             <h3>Second Blog &rarr;</h3>
@@ -34,7 +40,7 @@ export default function Home() { // exporting the function Home
           </Link>
 
           <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
+            href="/posts/third-post"
             className={styles.card}
           >
             <h3>Third Blog &rarr;</h3>
@@ -42,7 +48,7 @@ export default function Home() { // exporting the function Home
           </a>
 
           <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="/posts/fourth-post"
             className={styles.card}
           >
             <h3>Fourth Blog &rarr;</h3>
